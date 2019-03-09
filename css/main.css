@@ -1,0 +1,508 @@
+body {
+    /*overflow: hidden;*/
+}
+
+input{
+	outline: none;
+}
+
+input[type=button]{
+	background: #f8504b;
+}
+
+input[type=submit]{
+	background: #c52d28;
+}
+
+.ymaps-2-1-66-route-panel-input__input,
+input.ymaps-2-1-68-route-panel-input__input {
+    color: #000 !important;
+}
+
+p {
+    margin: 5px 0 0 0 !important;
+}
+
+/*
+@media screen and (max-width: 550px) {
+    .slider_car {
+		opacity: .3;
+        transform: rotate(-90deg);
+        padding: 0 5px 0 5px;
+        transform-origin: right top;
+        width: min-content;
+        position: relative;
+        left: -207px;
+        height: 100vw;
+        max-height: calc(100vw - 0px);
+        overflow-y: scroll;
+        overflow-x: hidden;
+        background: #fff;
+    }
+    .body_calc {
+        margin-bottom: 20px;
+        width: 100%;
+        height: 500px;
+        background: #fff;
+        margin-top: -40px;
+    }
+    .ymaps-2-1-68-route-panel.ymaps-2-1-68-route-panel_no-types .ymaps-2-1-68-route-panel__inputs {
+        padding-top: 143px !important;
+    }
+    #price {
+        background: #bbffc4;
+        left: 11px;
+        top: 290px;
+        position: absolute;
+        width: 210px;
+        height: 30px;
+        box-shadow: 0 5px 13px -4px;
+        visibility: hidden;
+    }
+    #added_service {
+        background: #ffffff;
+        color: #333;
+        left: 11px;
+        top: 81px;
+        position: absolute;
+        width: 210px !important;
+        height: 40px;
+        border-radius: 0;
+        margin: 0;
+        transition: .2s;
+    }
+    #current_city {
+        top: 134px;
+        position: absolute;
+        left: 27px;
+        width: 178px !important;
+        border: none;
+        align-self: center;
+        border: 1px solid #ccc;
+    }
+}
+*/
+
+@media screen and (min-width: 50px) {
+    #current_city {
+        bottom: 472px;
+		padding: 5px;
+		position: relative;
+		left: 27px;
+		width: 178px !important;
+		border: none;
+		align-self: center;
+		border: 1px solid #ccc;
+    }
+    .ymaps-2-1-68-route-panel.ymaps-2-1-68-route-panel_no-types .ymaps-2-1-68-route-panel__inputs {
+        padding-top: 110px !important;
+    }
+    .slider_car {
+		opacity: .3;
+        transform: rotate(-90deg);
+        padding: 0 5px 0 5px;
+        transform-origin: right top;
+        width: min-content;
+        position: relative;
+        left: -207px;
+        height: 100vw;
+        max-height: calc(100vw - 1px);
+        /*overflow-y: scroll;
+        overflow-x: hidden;*/
+		overflow: scroll;
+			-webkit-overflow-scrolling: touch;
+        background: #fff;
+    }
+    .body_calc {
+        width: 100%;
+		height: 400px;
+		background: #fff;
+    }
+    #price {
+        background: #bbffc4;
+		left: 11px;
+		bottom: 978px;
+		position: relative;
+		width: 210px;
+		height: 30px;
+		box-shadow: 0 5px 13px -4px;
+		visibility: hidden;
+    }
+    #added_service {
+        background: #ffffff;
+        color: #333;
+        left: 11px;
+		bottom: 1120px;
+		position: relative;
+        width: 210px !important;
+        height: 40px;
+		border: none;
+        border-radius: 0;
+        margin: 0;
+        transition: .2s;
+    }
+}
+
+#current_city:hover {
+    background: #ececec;
+}
+
+#added_service:hover {
+    background: #ececec;
+}
+
+.class_selectCar {
+    transition: .5s;
+    box-shadow: 0 27px 30px #0000003b;
+    z-index: 1;
+}
+
+.cost {
+    margin-top: 4px;
+    color: #68a283;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.button_carousel {
+    display: inline-block;
+    position: relative;
+    width: 193px;
+    height: 178px;
+    top: 9px;
+    background-color: #fff;
+    transform: rotate(90deg);
+    text-align: center;
+}
+
+#button_item_carousel_after {
+    cursor: pointer;
+    width: 150px;
+    height: 89px;
+    margin-top: 15px;
+}
+
+#button_item_carousel {
+    bottom: 34px;
+    left: 50%;
+    cursor: pointer;
+    margin-left: 3px;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+.body_cars {
+	position: relative;
+    width: 102%;
+    height: 180px;
+    background: #fff;
+    bottom: 14px;
+    z-index: 2;
+    transition: .8s;
+    box-shadow: 10px 5px 30px #000;
+    overflow: hidden;
+}
+
+#panel_button_sh {
+	position: relative;
+    float: right;
+    background: #c52d28;
+    box-shadow: 0 2px 20px -4px #000;
+    right: 4px;
+    bottom: 0;
+    width: 140px;
+    height: 42px;
+    z-index: 3;
+    visibility: hidden;
+    transition: .8s;
+}
+
+#map {
+    width: 100%;
+    height: 550px;
+    padding: 0;
+    margin: 0;
+}
+
+#dialogWindowBodybefore {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.21);
+    padding: 10px;
+    overflow: hidden;
+    border: none;
+    z-index: 10;
+}
+
+.TitleDialog {
+    margin-top: -3px;
+    max-width: 250px;
+    width: 200px;
+}
+
+#closeWindow {
+    position: absolute;
+    border: none;
+    right: 8px;
+    top: 8px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    cursor: default;
+    background-image: url(../img/icons/X.png);
+    font-size: 17px;
+    font-weight: 700;
+    transition: .2s;
+    z-index: 1;
+}
+
+#closeWindow:hover {
+    background-image: url(../img/icons/hover_X.png);
+}
+
+#dialogWindowBody {
+    position: fixed;
+    top: 140px;
+    z-index: 10;
+    background: #fff;
+    padding: 16px;
+    box-shadow: 0 5px 50px 4px rgba(0, 0, 0, 0.28);
+    border-radius: 5px;
+    overflow: hidden;
+    left: calc(50% - 166px);
+    -webkit-animation-name: example;
+    -webkit-animation-duration: 4s;
+    animation-name: example;
+    animation-duration: .2s;
+}
+
+@keyframes example {
+    from {
+        opacity: .5;
+        top: 170px;
+    }
+    to {
+        opacity: 1;
+        top: 140px;
+    }
+}
+
+#dialogWindowBodybefore {
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.21);
+    padding: 10px;
+    overflow: hidden;
+    border: none;
+    z-index: 10;
+}
+
+.textWindow {
+    font-size: 14px;
+    width: 95%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 0px solid #ccc;
+    margin-top: 10px;
+}
+
+.info {
+    position: absolute;
+    cursor: pointer;
+    top: -8px;
+    font-size: 30px !important;
+    right: 40%;
+    box-shadow: 0 0 0 0px;
+    border-radius: 50%;
+    width: 32px !important;
+    height: 32px !important;
+    color: #bbb;
+    transition: .2s;
+}
+
+.info:hover {
+    box-shadow: 0 0 0 5px;
+    color: #3476b8;
+}
+
+.i_check {
+    height: 0px;
+    overflow: hidden;
+    padding-left: 30px;
+    transition: .2s;
+}
+
+.t_o_check {
+    height: 0px;
+    overflow: hidden;
+    padding-left: 30px;
+    transition: .2s;
+}
+
+#wishes-arenda {
+    padding: 7px;
+}
+
+input[type="radio"],
+[type="checkbox"] {
+    opacity: 0;
+    width: 26px;
+}
+
+.icons_check {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: 2px;
+    top: 2px;
+    margin-bottom: -21px;
+    background-size: contain !important;
+}
+
+.icon0 {
+    background: url(../img/icons/646240.svg) no-repeat;
+}
+
+.icon1 {
+    background: url(../img/icons/258400.svg) no-repeat;
+}
+
+.icon2 {
+    background: url(../img/icons/270777.svg) no-repeat;
+}
+
+.icon3 {
+    background: url(../img/icons/860065.svg) no-repeat;
+}
+
+.icon4 {
+    background: url(../img/icons/864466.svg) no-repeat;
+}
+
+.icon5 {
+    background: url(../img/icons/1033943.svg) no-repeat;
+}
+
+.icon6 {
+    background: url(../img/icons/533994.svg) no-repeat;
+}
+
+.icon7 {
+    background: url(../img/icons/963051.svg) no-repeat;
+}
+
+.icon8 {
+    background: url(../img/icons/204691.svg) no-repeat;
+}
+
+.icon9 {
+    background: url(../img/icons/875297.svg) no-repeat;
+}
+
+.icon10 {
+    background: url(../img/icons/963350.svg) no-repeat;
+}
+
+.icon11 {
+    background: url(../img/icons/923819.svg) no-repeat;
+}
+
+.icon12 {
+    background: url(../img/icons/923857.svg) no-repeat;
+}
+
+.icon13 {
+    background: url(../img/icons/887185.svg) no-repeat;
+}
+
+#block_screen {
+	position: relative;
+    display: block;
+	visibility: visible;
+    bottom: 590px;
+    border: none;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background: rgba(0, 0, 0, 0.37);
+    color: #fff;
+    font-weight: bold;
+    font-size: 30px;
+    text-shadow: 0 0 30px #000;
+}
+
+#notify {
+	position: relative;
+    bottom: 1146px;
+    width: 100%;
+    height: 72px;
+    margin: 0;
+    background: rgba(42, 44, 47, 0.91);
+    color: #fff;
+    text-shadow: 0 0 30px #000;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+}
+
+#notify_before {
+	position: relative;
+    bottom: 232.5vh;
+    width: 100%;
+    height: 72px;
+    margin: 0;
+    background: rgba(0, 0, 0, .5);
+    color: #fff;
+    text-shadow: 0 0 30px #000;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#my_price {
+    font-weight: normal;
+    display: inline-block;
+    max-width: 100%;
+}
+
+#jsonCars {
+    width: 100%;
+    height: 300px;
+    overflow: auto;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+#jsonCarsTextarea {
+    position: absolute;
+    top: 143px;
+    width: calc(97% + 3px);
+    height: 0px;
+    overflow: auto;
+    background: #fff;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+::-webkit-scrollbar {
+    width: 12px !important;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important; 
+    border-radius: 10px !important;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px !important;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5) !important; 
+}
